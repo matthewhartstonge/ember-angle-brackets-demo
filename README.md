@@ -12,6 +12,10 @@ On running `ember serve` you should be greeted with:
 - Or run the test server directly with `ember test --server` which will be available at [http://localhost:7357](http://localhost:7357)
 
 
+There may be a few broken tests that you might want to fix...
+
+![broken tests](docs/broken-tests.png)
+
 ## Files of interest
 Check out the following files for inspiration and implementation details:
 
