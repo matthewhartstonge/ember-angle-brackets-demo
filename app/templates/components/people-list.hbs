@@ -1,0 +1,38 @@
+<PaperList>
+  <PaperSubheader data-test-people-list-header>
+    {{!-- @headerTitle denotes a param that is passed into the component --}}
+    {{if @headerTitle @headerTitle "People List"}}
+  </PaperSubheader>
+
+  {{#each @people as |person|}}
+    <PaperItem @class="md-3-line">
+      {{#if person.img}}
+        <img
+          alt="{{person.firstName}} {{person.lastName}}"
+          class="md-avatar"
+          src={{person.img}}
+          data-test-people-list-profile-image
+        >
+      {{/if}}
+      <div class="md-list-item-text">
+        <h3>
+          <PaperIcon
+            @icon={{if person.isMachine "construction" "person"}}
+            data-test-people-list-icon
+          />
+          <span data-test-people-list-name>
+            {{person.firstName}} {{person.lastName}}
+          </span>
+        </h3>
+        <h4 data-test-people-list-email>
+          <PaperIcon @icon="@" />
+          <code>{{person.email}}</code>
+        </h4>
+      </div>
+    </PaperItem>
+
+    <PaperDivider data-test-people-list-divider />
+  {{/each}}
+</PaperList>
+
+{{yield}}
